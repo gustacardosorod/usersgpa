@@ -8,14 +8,14 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_operator")
-public class Operator {
+public class Funcionario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    public Operator() {   
+    public Funcionario() {   
     }
 
     public Long getId() {

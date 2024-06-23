@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_user")
-public class User {
+public class Paciente {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +20,9 @@ public class User {
     
     @ManyToOne
     @JoinColumn(name = "operator_id")
-    private Operator operator;
+    private Funcionario operator;
 
-    public User() {     
+    public Paciente() {     
     }
     public Long getId() {
         return id;
@@ -42,10 +42,10 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Operator getOperator() {
+    public Funcionario getOperator() {
         return operator;
     }
-    public void setOperator(Operator operator) {
+    public void setOperator(Funcionario operator) {
         this.operator = operator;
     }
 }

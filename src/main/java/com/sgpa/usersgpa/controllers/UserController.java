@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.sgpa.usersgpa.entities.User;
+import com.sgpa.usersgpa.entities.Paciente;
 import com.sgpa.usersgpa.repositories.UserRepository;
 
 @RestController
@@ -19,20 +19,20 @@ public class UserController {
     private UserRepository repository;
 
     @GetMapping
-    public List<User> findAll() {
-        List<User> result = repository.findAll();
+    public List<Paciente> findAll() {
+        List<Paciente> result = repository.findAll();
         return result;
     }
 
     @GetMapping(value = "/{id}")
-    public User findById(@PathVariable Long id) {
-        User result = repository.findById(id).get();
+    public Paciente findById(@PathVariable Long id) {
+        Paciente result = repository.findById(id).get();
         return result;
     }
 
     @PostMapping
-    public User insert(@RequestBody User user) {
-        User result = repository.save(user);
+    public Paciente insert(@RequestBody Paciente user) {
+        Paciente result = repository.save(user);
         return result;
     }
 }
